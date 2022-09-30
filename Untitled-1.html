@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="schedul">Chose you schedule</label>
+        <select name="schedule" id="schedule"></select>
+        <script>
+            /*let AvalibleHourt = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+                Finalhourt = "18:00",
+                Today = new Date(),
+                IntHour = Today.toLocaleString().split(" ")[1];
+            console.log(IntHour);*/
+            console.log("tercer commit");
+            horas_compromiso = 12;
+            horas_trabajadas = 0;
+            let hoy = new Date();
+            let hora = hoy.toLocaleString().split(" ")[1];
+            let manana = new Date()
+            hora = hora.substring(0, 2);
+            let contador_dias = 0;
+            do {
+                if (hora > 18) {
+                    console.log("fuera de horario laboral");
+                    contador_dias = contador_dias + 1;
+                    manana.setDate(manana.getDate() + contador_dias);
+                    horas_trabajadas = horas_trabajadas + 8;
+                    console.log(manana)
+                } else {
+                    console.log("dentro de horario laboral");
+                }
+
+            } while (horas_trabajadas != horas_compromiso);
+
+            function calcTime() {
+
+                let hours = parseInt(Finalhourt.split(":")) - parseInt(IntHour.split(":")),
+                    CalcFinalHourt = AvalibleHourt[8 - hours];
+
+                return `el trabajo finalizara alrededor de las ${CalcFinalHourt}:00`;
+            }
+        </script>
+    </form>
+</body>
+
+</html>
