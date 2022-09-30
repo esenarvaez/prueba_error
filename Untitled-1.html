@@ -27,13 +27,11 @@
             let contador_dias = 0;
             do {
                 if (hora > 18) {
-                    console.log("fuera de horario laboral");
                     contador_dias = contador_dias + 1;
                     manana.setDate(manana.getDate() + contador_dias);
                     horas_trabajadas = horas_trabajadas + 8;
                     console.log(manana)
                 } else {
-                    console.log("dentro de horario laboral");
                 }
 
             } while (horas_trabajadas != horas_compromiso);
